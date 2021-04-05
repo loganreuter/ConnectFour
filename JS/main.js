@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
             //Development
             //window.location.replace('/game.html');
             //Production
-            window.location.replace('/ConnectFour/game.html');
+            window.location.replace('/ConnectFour/game');
         })
     }
 
