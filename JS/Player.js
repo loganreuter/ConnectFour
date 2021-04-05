@@ -6,9 +6,9 @@ export default class Player{
         this.value = value;
     }
     
-    Move(i, j, cells){
-        Game.CanMove = false;
-        Game.board[i][j] = this.value;
+    Move(i, j, cells, game){
+        game.CanMove = false;
+        game.board[i][j] = this.value;
 
         for (var x = 0; x <= j; x++) {
             this.Animate(x, cells);

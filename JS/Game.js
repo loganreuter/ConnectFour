@@ -1,22 +1,37 @@
 import Player from "./Player.js";
-import AI from "./AI.js"
+import AI from "./AI.js";
 
 export default class Game{
-    static board = [
-        ["", "", "", "", "", ""],
-        ["", "", "", "", "", ""],
-        ["", "", "", "", "", ""],
-        ["", "", "", "", "", ""],
-        ["", "", "", "", "", ""],
-        ["", "", "", "", "", ""],
-        ["", "", "", "", "", ""],
-    ];;
+    constructor(GameMode, Style){
+        this.CanMove = true;
+        this.Player1 = new Player("red", "X");
+        this.board = [
+            ["", "", "", "", "", ""],
+            ["", "", "", "", "", ""],
+            ["", "", "", "", "", ""],
+            ["", "", "", "", "", ""],
+            ["", "", "", "", "", ""],
+            ["", "", "", "", "", ""],
+            ["", "", "", "", "", ""],
+        ];
+
+        if(GameMode == "TwoPlayer"){
+            var style = (Style == "classic")? "black" : "yellow";
+            this.Player2 = new Player(style, "O");
+        } else{
+            this.AI = new AI(Style, "O");
+        }
+    }
+
+    
     static CanMove;
-    static Player1 = new Player("red", "X");
+    
+    
     static turn = true;
-    // static AI = AI.init();
+    
 
     static CheckForWinner(board) {
+        
         //Checks Columns for Win
         for (var i = 0; i < 7; i++) {
             for (var j = board[i].length - 1; j > 0; j--) {

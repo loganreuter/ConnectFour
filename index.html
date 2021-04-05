@@ -1,79 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect Four</title>
+    <link rel="stylesheet" href="./Styles/main.css">
     <link rel="stylesheet" href="./Styles/index.css">
 </head>
-
 <body>
-    <h2>Connect Four</h2>
-    <div id="type"></div>
-    <!-- 6#7 -->
-    <div id="result"></div>
+    <h1>Connect Four</h1>
 
-    <div class="parent">
-        <div id="0" class="column">
-            <div index="0" class="cell"></div>
-            <div index="1" class="cell"></div>
-            <div index="2" class="cell"></div>
-            <div index="3" class="cell"></div>
-            <div index="4" class="cell"></div>
-            <div index="5" class="cell"></div>
+    <div id="GameMode">
+        <div id="TwoPlayer">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path
+                        d="M10.119 16.064c2.293-.53 4.427-.994 3.394-2.946-3.147-5.941-.835-9.118 2.488-9.118 3.388 0 5.643 3.299 2.488 9.119-1.065 1.964 1.149 2.427 3.393 2.946 1.985.458 2.118 1.428 2.118 3.107l-.003.828h-1.329c0-2.089.083-2.367-1.226-2.669-1.901-.438-3.695-.852-4.351-2.304-.239-.53-.395-1.402.226-2.543 1.372-2.532 1.719-4.726.949-6.017-.902-1.517-3.617-1.509-4.512-.022-.768 1.273-.426 3.479.936 6.05.607 1.146.447 2.016.206 2.543-.66 1.445-2.472 1.863-4.39 2.305-1.252.29-1.172.588-1.172 2.657h-1.331c0-2.196-.176-3.406 2.116-3.936zm-10.117 3.936h1.329c0-1.918-.186-1.385 1.824-1.973 1.014-.295 1.91-.723 2.316-1.612.212-.463.355-1.22-.162-2.197-.952-1.798-1.219-3.374-.712-4.215.547-.909 2.27-.908 2.819.015.935 1.567-.793 3.982-1.02 4.982h1.396c.44-1 1.206-2.208 1.206-3.9 0-2.01-1.312-3.1-2.998-3.1-2.493 0-4.227 2.383-1.866 6.839.774 1.464-.826 1.812-2.545 2.209-1.49.345-1.589 1.072-1.589 2.334l.002.618z" />
+                </svg>
+            </div><br>
+            Two Player
         </div>
-        <div id="1" class="column">
-            <div index="0" class="cell"></div>
-            <div index="1" class="cell"></div>
-            <div index="2" class="cell"></div>
-            <div index="3" class="cell"></div>
-            <div index="4" class="cell"></div>
-            <div index="5" class="cell"></div>
-        </div>
-        <div id="2" class="column">
-            <div index="0" class="cell"></div>
-            <div index="1" class="cell"></div>
-            <div index="2" class="cell"></div>
-            <div index="3" class="cell"></div>
-            <div index="4" class="cell"></div>
-            <div index="5" class="cell"></div>
-        </div>
-        <div id="3" class="column">
-            <div index="0" class="cell"></div>
-            <div index="1" class="cell"></div>
-            <div index="2" class="cell"></div>
-            <div index="3" class="cell"></div>
-            <div index="4" class="cell"></div>
-            <div index="5" class="cell"></div>
-        </div>
-        <div id="4" class="column">
-            <div index="0" class="cell"></div>
-            <div index="1" class="cell"></div>
-            <div index="2" class="cell"></div>
-            <div index="3" class="cell"></div>
-            <div index="4" class="cell"></div>
-            <div index="5" class="cell"></div>
-        </div>
-        <div id="5" class="column">
-            <div index="0" class="cell"></div>
-            <div index="1" class="cell"></div>
-            <div index="2" class="cell"></div>
-            <div index="3" class="cell"></div>
-            <div index="4" class="cell"></div>
-            <div index="5" class="cell"></div>
-        </div>
-        <div id="6" class="column">
-            <div index="0" class="cell"></div>
-            <div index="1" class="cell"></div>
-            <div index="2" class="cell"></div>
-            <div index="3" class="cell"></div>
-            <div index="4" class="cell"></div>
-            <div index="5" class="cell"></div>
+        <div id="SinglePlayer" class="active">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path
+                        d="M20.822 18.096c-3.439-.794-6.641-1.49-5.09-4.418 4.719-8.912 1.251-13.678-3.732-13.678-5.082 0-8.465 4.949-3.732 13.678 1.598 2.945-1.725 3.641-5.09 4.418-2.979.688-3.178 2.143-3.178 4.663l.005 1.241h1.995c0-3.134-.125-3.55 1.838-4.003 2.851-.657 5.543-1.278 6.525-3.456.359-.795.592-2.103-.338-3.815-2.058-3.799-2.578-7.089-1.423-9.026 1.354-2.275 5.426-2.264 6.767-.034 1.15 1.911.639 5.219-1.403 9.076-.91 1.719-.671 3.023-.31 3.814.99 2.167 3.707 2.794 6.584 3.458 1.879.436 1.76.882 1.76 3.986h1.995l.005-1.241c0-2.52-.199-3.975-3.178-4.663z" />
+                </svg>
+            </div><br>
+            Single Player
         </div>
     </div>
-    <script type="module" src="./JS/main.js"></script>
-</body>
+    
+    <div id="display">
+        <div id="classic">
+            <div class="classic board">
+                <div id="0" class="column">
+                    <div index="0" class="cell"></div>
+                    <div index="1" class="cell"></div>
+                    <div index="2" class="cell"></div>
+                    <div index="3" class="cell"></div>
+                    <div index="4" class="cell"></div>
+                    <div index="5" class="cell"></div>
+                </div>
+                <div id="1" class="column">
+                    <div index="0" class="cell"></div>
+                    <div index="1" class="cell"></div>
+                    <div index="2" class="cell"></div>
+                    <div index="3" class="cell"></div>
+                    <div index="4" class="cell"></div>
+                    <div index="5" class="cell"></div>
+                </div>
+                <div id="2" class="column">
+                    <div index="0" class="cell"></div>
+                    <div index="1" class="cell"></div>
+                    <div index="2" class="cell"></div>
+                    <div index="3" class="cell"></div>
+                    <div index="4" class="cell"></div>
+                    <div index="5" class="cell"></div>
+                </div>
+                <div id="3" class="column">
+                    <div index="0" class="cell"></div>
+                    <div index="1" class="cell"></div>
+                    <div index="2" class="cell"></div>
+                    <div index="3" class="cell"></div>
+                    <div index="4" class="cell"></div>
+                    <div index="5" class="cell"></div>
+                </div>
+                <div id="4" class="column">
+                    <div index="0" class="cell"></div>
+                    <div index="1" class="cell"></div>
+                    <div index="2" class="cell"></div>
+                    <div index="3" class="cell"></div>
+                    <div index="4" class="cell"></div>
+                    <div index="5" class="cell"></div>
+                </div>
+                <div id="5" class="column">
+                    <div index="0" class="cell"></div>
+                    <div index="1" class="cell"></div>
+                    <div index="2" class="cell"></div>
+                    <div index="3" class="cell"></div>
+                    <div index="4" class="cell"></div>
+                    <div index="5" class="cell"></div>
+                </div>
+                <div id="6" class="column">
+                    <div index="0" class="cell"></div>
+                    <div index="1" class="cell"></div>
+                    <div index="2" class="cell"></div>
+                    <div index="3" class="cell"></div>
+                    <div index="4" class="cell"></div>
+                    <div index="5" class="cell"></div>
+                </div>
+            </div><br>
+            Classic
+        </div>
+        <div id="modern" class="active">
+            <div class="modern board" >
+                <div id="0" class="column">
+                    <div index="0" class="cell"></div>
+                    <div index="1" class="cell"></div>
+                    <div index="2" class="cell"></div>
+                    <div index="3" class="cell"></div>
+                    <div index="4" class="cell"></div>
+                    <div index="5" class="cell"></div>
+                </div>
+                <div id="1" class="column">
+                    <div index="0" class="cell"></div>
+                    <div index="1" class="cell"></div>
+                    <div index="2" class="cell"></div>
+                    <div index="3" class="cell"></div>
+                    <div index="4" class="cell"></div>
+                    <div index="5" class="cell"></div>
+                </div>
+                <div id="2" class="column">
+                    <div index="0" class="cell"></div>
+                    <div index="1" class="cell"></div>
+                    <div index="2" class="cell"></div>
+                    <div index="3" class="cell"></div>
+                    <div index="4" class="cell"></div>
+                    <div index="5" class="cell"></div>
+                </div>
+                <div id="3" class="column">
+                    <div index="0" class="cell"></div>
+                    <div index="1" class="cell"></div>
+                    <div index="2" class="cell"></div>
+                    <div index="3" class="cell"></div>
+                    <div index="4" class="cell"></div>
+                    <div index="5" class="cell"></div>
+                </div>
+                <div id="4" class="column">
+                    <div index="0" class="cell"></div>
+                    <div index="1" class="cell"></div>
+                    <div index="2" class="cell"></div>
+                    <div index="3" class="cell"></div>
+                    <div index="4" class="cell"></div>
+                    <div index="5" class="cell"></div>
+                </div>
+                <div id="5" class="column">
+                    <div index="0" class="cell"></div>
+                    <div index="1" class="cell"></div>
+                    <div index="2" class="cell"></div>
+                    <div index="3" class="cell"></div>
+                    <div index="4" class="cell"></div>
+                    <div index="5" class="cell"></div>
+                </div>
+                <div id="6" class="column">
+                    <div index="0" class="cell"></div>
+                    <div index="1" class="cell"></div>
+                    <div index="2" class="cell"></div>
+                    <div index="3" class="cell"></div>
+                    <div index="4" class="cell"></div>
+                    <div index="5" class="cell"></div>
+                </div>
+            </div><br>
+            Modern
+        </div>
+    </div>
 
+    <button id="play">Play</button>
+    <script type="module" src="./JS/main.js"></script>
+    <script>
+        const displayOptClassic = document.getElementById("classic");
+        const displayOptModern = document.getElementById("modern");
+        const GameModeTwoPlayer = document.getElementById("TwoPlayer");
+        const GameModeSinglePlayer = document.getElementById("SinglePlayer");
+        window.sessionStorage.setItem("style", "modern");
+        window.sessionStorage.setItem("GameMode", "SinglePlayer");
+
+        displayOptClassic.addEventListener("click", () => {
+            if(window.sessionStorage.style != "classic"){
+                window.sessionStorage.style = "classic";
+                displayOptClassic.classList.toggle("active");
+                displayOptModern.classList.toggle("active");
+            }
+        })
+        displayOptModern.addEventListener("click", () => {
+            if(window.sessionStorage.style != "modern"){
+                window.sessionStorage.style = "modern";
+                displayOptClassic.classList.toggle("active");
+                displayOptModern.classList.toggle("active");
+            }
+        })
+        GameModeTwoPlayer.addEventListener("click", () => {
+            if(window.sessionStorage.GameMode != "TwoPlayer"){
+                window.sessionStorage.GameMode = "TwoPlayer";
+                GameModeTwoPlayer.classList.toggle("active");
+                GameModeSinglePlayer.classList.toggle("active");
+            }
+        })
+        GameModeSinglePlayer.addEventListener("click", () => {
+            if(window.sessionStorage.GameMode != "SinglePlayer"){
+                window.sessionStorage.GameMode = "SinglePlayer";
+                GameModeTwoPlayer.classList.toggle("active");
+                GameModeSinglePlayer.classList.toggle("active");
+            }
+        })
+    </script>
+</body>
 </html>

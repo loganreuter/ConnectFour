@@ -1,14 +1,13 @@
 import Game from "./Game.js";
 
 export default class AI {
-    static color = "yellow";
-    static value = "O";
-
-    static init(){
-        console.log("Init");
+    constructor(style, value){
+        this.color = (style == "classic") ? "black" : "yellow";
+        this.value = value;
+        console.log("AI style: " + style);
     }
 
-    static Move(board, cells) {
+    Move(board, cells, game) {
         let bestVal = -1000;
         let bestMove = [-1, -1];
         var AllScores = [];
@@ -53,18 +52,18 @@ export default class AI {
         }
 
         
-        Game.board[x][y] = this.value;
+        game.board[x][y] = this.value;
         var target = cells[x].children;
         for(var j = 0; j <= y; j++){
             this.Animate(j, target);
         }
 
-        Game.CanMove = true;
+        game.CanMove = true;
 
         // return bestMove;
     }
 
-    static Animate(index, cells){
+    Animate(index, cells){
         setTimeout(() => {
             cells[index].style.backgroundColor = this.color;
             cells[index].style.color = this.color;
@@ -76,7 +75,7 @@ export default class AI {
         }, 50 * index)
     }
 
-    static GetPossibleMoves(board){
+    GetPossibleMoves(board){
         let AvailSpaces = [];
         for (var i = 0; i < 7; i++) {
             for (var j = 0; j < 6; j++) {
@@ -90,7 +89,7 @@ export default class AI {
         return AvailSpaces;
     }
 
-    static minimax(board, depth, isMax){
+    minimax(board, depth, isMax){
         var GameOver = Game.CheckForWinner(board);
         var OpenSpaces = Game.CheckForOpenSpaces(board);
         var PossibleMoves = this.GetPossibleMoves(board);
@@ -105,7 +104,7 @@ export default class AI {
             return 0;
         }
 
-        if(depth < 7){
+        if(depth < 6){
             if (isMax) {
                 best = -1000;
 
