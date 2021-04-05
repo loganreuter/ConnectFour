@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // }
 
     //Production
-    if (window.location.pathname == "/ConnectFour/game.html") {
+    if (window.location.pathname == "/ConnectFour/game") {
         BeginGame();
     }
 
@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
             //Development
             //window.location.replace('/game.html');
             //Production
-            window.location.replace('https://lreuter2020.github.io/ConnectFour/game.html');
+            window.location.replace('/ConnectFour/game');
         })
     }
 
