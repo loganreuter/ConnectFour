@@ -2,7 +2,13 @@ import Game from "./Game.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     console.log(window.location.pathname);
-    if (window.location.pathname == "/game.html") {
+    // if local
+    // if (window.location.pathname == "/game.html") {
+    //     BeginGame();
+    // }
+
+    //Production
+    if (window.location.pathname == "/ConnectFour/game.html") {
         BeginGame();
     }
 
@@ -10,7 +16,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (play != null) {
         play.addEventListener("click", () => {
-            window.location.replace('/game.html');
+            //Development
+            //window.location.replace('/game.html');
+            //Production
+            window.location.replace('/ConnectFour/game.html');
         })
     }
 
